@@ -20,7 +20,7 @@
 	.byte 0x0
 	.endr
 	colorChangePrompt:
-	.asciz "Choose Color:\n0:Black\n1:Blue\n2:Green\n3:Cyan\n4:Red\n5:Magenta\n6:Brown\n7:Light Grey\n8:Grey\n9:Light Blue\nA:Light Green\nB:Light Cyan\nC:Light Red\nD:Light Magenta\nE:Yellow\nF:White\n"
+	.asciz "Choose Color:\n1:Blue\n2:Green\n3:Cyan\n4:Red\n5:Magenta\n6:Brown\n7:Light Grey\n8:Grey\n9:Light Blue\nA:Light Green\nB:Light Cyan\nC:Light Red\nD:Light Magenta\nE:Yellow\nF:White\n"
 	colorBuffer:
 	.byte 0
 	
