@@ -385,7 +385,7 @@
 		bl readLine
 		
 		ldr r0,=colorBuffer
-		ldr r0,[r0]
+		ldrb r0,[r0]
 		
 		cmp r0,#0x39
 		subls r0,#0x30
