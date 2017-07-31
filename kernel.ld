@@ -16,12 +16,17 @@ SECTIONS {
 		*(.init)
 	}
 	
+	
 	/* 
 	* Next we put the data.
 	*/
 	.data : {
 		*(.data)
 		*.c.o(*)
+	}
+	
+	.rodata : {
+		*(.rodata)
 	}
 	
 	/* 
