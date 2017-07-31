@@ -8,7 +8,6 @@
 *r1:remainder
 *By: Alex Chadwick
 */
-
 .globl divideU32
 	divideU32:
 	result .req r0

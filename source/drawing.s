@@ -28,7 +28,7 @@
 		
 	
 	/*
-	*setPixel: Set pixel given by x:r0 y:r1 to value in foreColor
+	*setPixel:Set pixel given by x:r0 y:r1 to value in foreColor
 	*Inputs:
 	*r0:x
 	*r1:y
@@ -82,7 +82,7 @@
 		mov pc,lr
 	
 	/*
-	*drawLine: 
+	*drawLine:Draws a line from (r0,r1) to (r2,r3)
 	*Inputs:
 	*r0:x0
 	*r1:y0
@@ -157,7 +157,7 @@
 		pop {r4,r5,r6,r7,r8,r9,r10,r11,r12,pc}
 		
 	/*
-	*drawCharacter: Draw character r0 in x:r1 y:r2
+	*drawCharacter:Draw character r0 in x:r1 y:r2
 	*Inputs:
 	*r0:Character code
 	*r1:x
@@ -220,7 +220,7 @@
 		pop {r4,r5,r6,r7,r8,pc}
 		
 	/*
-	*drawString: Draw C style string in r0 starting at (r1,r2)
+	*drawString:Draw C style string in r0 starting at (r1,r2)
 	*Inputs:
 	*r0:string
 	*r1:x
@@ -300,7 +300,7 @@
 		pop {r4,r5,r6,r7,r8,r9,r10,r11,pc}
 		
 	/*
-	*drawStringDelay: Draw C style string in r0 starting at (r1,r2) with r3 (ms) delay between each character
+	*drawStringDelay:Draw C style string in r0 starting at (r1,r2) with r3 (ms) delay between each character
 	*Inputs:
 	*r0:string
 	*r1:x
@@ -389,6 +389,5 @@
 		
 			
 			
-	
-		
+
 		

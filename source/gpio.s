@@ -1,5 +1,5 @@
 /* 
-*getGpioAddress: Gets the base address of GPIO registers
+*getGpioAddress:Gets the base address of GPIO registers
 *Input:None
 *Output: 
 *r0:gpioAddress
@@ -10,7 +10,7 @@ getGpioAddress:
 	mov pc,lr
 
 /*
-*setGpioFunc: Sets the function of given GPIO pin to given function number
+*setGpioFunc:Sets the function of given GPIO pin to given function number
 *Input:
 *r0:pinNum
 *r1:pinFunction
@@ -55,10 +55,10 @@ setGpioFunc:
 	pop {pc}
 
 /*
-*setGpio: Sets the status of GPIO pin to on or off
+*setGpio:Sets the status of GPIO pin to on or off
 *Inputs:
 *r0: pinNum
-*r1: pinVal (0 for off[actually on])
+*r1: pinVal (0 for off)
 *Ouput:None
 */
 .globl setGpio
@@ -93,9 +93,115 @@ setGpio:
 	pop {pc}
 
 
+.globl lightUpMyWorld
+lightUpMyWorld:
+	push {lr}
+	mov r0, #18
+	mov r1, #1
+	bl setGpioFunc
+
+	mov r0, #18
+	mov r1, #1
+	bl setGpio
+
+	mov r0, #23
+	mov r1, #1
+	bl setGpioFunc
+
+	mov r0, #23
+	mov r1, #1
+	bl setGpio
+
+	mov r0, #24
+	mov r1, #1
+	bl setGpioFunc
+
+	mov r0, #24
+	mov r1, #1
+	bl setGpio
+
+	mov r0, #25
+	mov r1, #1
+	bl setGpioFunc
+
+	mov r0, #25
+	mov r1, #1
+	bl setGpio
+
+	mov r0, #8
+	mov r1, #1
+	bl setGpioFunc
+
+	mov r0, #8
+	mov r1, #1
+	bl setGpio
+
+	mov r0, #7
+	mov r1, #1
+	bl setGpioFunc
+
+	mov r0, #7
+	mov r1, #1
+	bl setGpio
+
+	mov r0, #4
+	mov r1, #1
+	bl setGpioFunc
+
+	mov r0, #4
+	mov r1, #1
+	bl setGpio
+
+	mov r0, #17
+	mov r1, #1
+	bl setGpioFunc
+
+	mov r0, #17
+	mov r1, #1
+	bl setGpio
 
 
+	mov r0, #21
+	mov r1, #1
+	bl setGpioFunc
 
+	mov r0, #21
+	mov r1, #1
+	bl setGpio
+
+	mov r0, #22
+	mov r1, #1
+	bl setGpioFunc
+
+	mov r0, #22
+	mov r1, #1
+	bl setGpio
+
+	mov r0, #10
+	mov r1, #1
+	bl setGpioFunc
+
+	mov r0, #10
+	mov r1, #1
+	bl setGpio
+
+
+	mov r0, #9
+	mov r1, #1
+	bl setGpioFunc
+
+	mov r0, #9
+	mov r1, #1
+	bl setGpio
+	mov r0, #11
+	mov r1, #1
+	bl setGpioFunc
+
+	mov r0, #11
+	mov r1, #1
+	bl setGpio
+
+	pop {pc}
 
 
 

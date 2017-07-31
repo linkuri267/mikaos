@@ -15,7 +15,7 @@
 
 .section .text
 	/*
-	*initializeFrameBuffer:
+	*initializeFrameBuffer
 	*Inputs:
 	*r0: width
 	*r1: height

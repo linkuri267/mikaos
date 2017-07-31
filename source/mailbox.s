@@ -1,5 +1,5 @@
 /*
-*getMailboxAddress: Stores mailbox base address in r0
+*getMailboxAddress:Stores mailbox base address in r0
 *Input: None
 *Output: 
 *r0:mailboxAddress
@@ -10,7 +10,7 @@ getMailboxAddress:
 	mov pc,lr
 
 /*
-*mailboxWrite:
+*mailboxWrite
 *Input:
 *r0: mailboxNumber
 *r1: message
@@ -50,7 +50,7 @@ mailboxWrite:
 
 
 /*
-*mailboxRead: Stores message in mailbox r0 in r0
+*mailboxRead:Stores message in mailbox r0 in r0
 *Input:
 *r0: mailboxNumber
 *Output:

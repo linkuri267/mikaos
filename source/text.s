@@ -347,10 +347,15 @@ number2StringU:
 	noNull$:
 	
 	mov r0,length
+
+	.unreq formatStringAddress
+	.unreq destinationStringAddress
+	.unreq argumentListAddress
+	.unreq currentChar
+	.unreq currentArgument
+	.unreq length
+	.unreq tmpChar
+	.unreq null
+	
 	pop {r4,r5,r6,r7,r8,r9,r10,r11,pc}
 	
-	
-	
-	
-
-

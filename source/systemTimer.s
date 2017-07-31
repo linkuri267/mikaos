@@ -1,5 +1,5 @@
 /*
-*getTimerAddress: Stores timer base address in r0
+*getTimerAddress:Stores timer base address in r0
 *Input: Void
 *Output:
 *r0: Timer base address
@@ -10,7 +10,7 @@ getTimerAddress:
 	mov pc, lr
 
 /*
-*getCounterValue: Stores counter value in r0 and r1 (r0 lower)
+*getCounterValue:Stores counter value in r0 and r1 (r0 lower)
 *Input: None
 *Output: 
 *r0: lower counter
@@ -25,7 +25,7 @@ getCounterValue:
 	
 
 /*
-*timerWaitMs: Delay r0 ms 
+*timerWaitMs:Delay r0 ms 
 *Input: 
 *r0: Delay time in ms
 *Output: Void
