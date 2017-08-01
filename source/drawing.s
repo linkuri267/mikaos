@@ -19,6 +19,12 @@
 		ldr r1,=foreColor
 		strh r0,[r1]
 		mov pc,lr
+	
+	.globl getForeColor
+	getForeColor:
+		ldr r0,=foreColor
+		ldr r0,[r0]
+		mov pc,lr
 
 	.globl setGraphicsAddress
 	setGraphicsAddress:

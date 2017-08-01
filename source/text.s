@@ -166,7 +166,7 @@ number2StringU:
 	mov pc,lr
 		
 /*
-*formatString:sprintf
+*formatString
 *Input:
 *r0:formatStringAddress
 *r1:destinationStringAddress
