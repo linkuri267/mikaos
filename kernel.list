@@ -19487,7 +19487,7 @@ Disassembly of section .text:
    20018:	00008308 	.word	0x00008308
    2001c:	000081a0 	.word	0x000081a0
    20020:	000081c4 	.word	0x000081c4
-   20024:	0001ff90 	.word	0x0001ff90
+   20024:	00008358 	.word	0x00008358
 
 00020028 <getMailboxAddress>:
    20028:	e59f0070 	ldr	r0, [pc, #112]	; 200a0 <correctBox$+0x28>

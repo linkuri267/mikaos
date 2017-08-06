@@ -158,7 +158,7 @@ main:
 
 
 	hug:
-		ldr r0,=hug
+		ldr r0,=hugPrompt
 		mov r1,#hugPromptEnd - hugPrompt
 		b print
 
