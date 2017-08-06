@@ -20456,7 +20456,7 @@ Disassembly of section .text:
    20c68:	e3a00011 	mov	r0, #17
    20c6c:	e3a01001 	mov	r1, #1
    20c70:	ebffff75 	bl	20a4c <setGpio>
-   20c74:	e3a00015 	mov	r0, #21
+   20c74:	e3a00017 	mov	r0, #23
    20c78:	e3a01001 	mov	r1, #1
    20c7c:	ebffff72 	bl	20a4c <setGpio>
    20c80:	e3a0000b 	mov	r0, #11
@@ -20481,7 +20481,7 @@ Disassembly of section .text:
    20cc4:	e3a00011 	mov	r0, #17
    20cc8:	e3a01001 	mov	r1, #1
    20ccc:	ebffff4a 	bl	209fc <setGpioFunc>
-   20cd0:	e3a00015 	mov	r0, #21
+   20cd0:	e3a00017 	mov	r0, #23
    20cd4:	e3a01001 	mov	r1, #1
    20cd8:	ebffff47 	bl	209fc <setGpioFunc>
    20cdc:	e3a0000b 	mov	r0, #11
