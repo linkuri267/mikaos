@@ -27,6 +27,9 @@ void lightThree()
 
 void lightUpMyWorld()
 {
+	char length;
+	char message[] = "OK Mika!";
+	char messageBuffer[30];
 	setGpioFunc(9,1);
 	setGpioFunc(17,1);
 	setGpioFunc(23,1);
@@ -40,6 +43,9 @@ void lightUpMyWorld()
 	setGpioFunc(8,1);
 	setGpioFunc(7,1);
 	setGpioFunc(24,1);
+
+	length = formatString(message,messageBuffer,0);
+	print(messageBuffer,length);
 
 	lightNine();
 	timerWaitMs(2500000);

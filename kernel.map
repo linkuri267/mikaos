@@ -307,7 +307,7 @@ LOAD ./libcsud.a
  .ARM.attributes
                 0x000000000001fdd8       0x32 ./libcsud.a(platform.broadcom2835.c.o)
 
-.text           0x000000000001fe0c     0x1ffc
+.text           0x000000000001fe0c     0x204c
  *.c.o(.text)
  *(.text)
  .text          0x000000000001fe0c      0x20c build/main.o
@@ -354,28 +354,30 @@ LOAD ./libcsud.a
                 0x0000000000020b48                keyboardGetChar
  .text          0x0000000000020bd8       0x18 build/random.o
                 0x0000000000020bd8                random
- .text          0x0000000000020bf0      0x178 build/lights.o
+ .text          0x0000000000020bf0      0x1c8 build/lights.o
                 0x0000000000020bf0                lightNine
                 0x0000000000020c34                lightDot
                 0x0000000000020c54                lightThree
                 0x0000000000020cb0                lightUpMyWorld
- .text          0x0000000000020d68       0xd4 build/int.o
-                0x0000000000020d68                stringToInt
- .text          0x0000000000020e3c      0xfcc build/connectfour.o
-                0x0000000000020e3c                clearBoardArea
-                0x0000000000020ec0                drawBoard
-                0x0000000000020fa0                drawM
-                0x0000000000021094                drawT
-                0x0000000000021140                drawMark
-                0x0000000000021198                checkVerticalWin
-                0x00000000000212ec                checkHorizontalWin
-                0x0000000000021440                checkDiagonalWin
-                0x0000000000021a5c                checkWin
-                0x0000000000021ac8                connectFour
+ .text          0x0000000000020db8       0xd4 build/int.o
+                0x0000000000020db8                stringToInt
+ .text          0x0000000000020e8c      0xfcc build/connectfour.o
+                0x0000000000020e8c                clearBoardArea
+                0x0000000000020f10                drawBoard
+                0x0000000000020ff0                drawM
+                0x00000000000210e4                drawT
+                0x0000000000021190                drawMark
+                0x00000000000211e8                checkVerticalWin
+                0x000000000002133c                checkHorizontalWin
+                0x0000000000021490                checkDiagonalWin
+                0x0000000000021aac                checkWin
+                0x0000000000021b18                connectFour
 
-.rodata         0x0000000000021e08       0x7e
+.rodata         0x0000000000021e58       0x8a
  *(.rodata)
- .rodata        0x0000000000021e08       0x7e build/connectfour.o
+ .rodata        0x0000000000021e58        0x9 build/lights.o
+ *fill*         0x0000000000021e61        0x3 
+ .rodata        0x0000000000021e64       0x7e build/connectfour.o
 
 /DISCARD/
  *(*)
