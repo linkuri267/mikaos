@@ -28,11 +28,9 @@ void lightThree()
 void lightUpMyWorld()
 {
 	char length;
-	char message[] = "OK Mika!";
-	char messageBuffer[30];
+	char message[] = "OK Mika!\n";
 
-	length = formatString(message,messageBuffer,0);
-	print(messageBuffer,length);
+	print(message,10);
 	timerWaitMs(2500000);
 
 
