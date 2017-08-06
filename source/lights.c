@@ -46,6 +46,7 @@ void lightUpMyWorld()
 
 	length = formatString(message,messageBuffer,0);
 	print(messageBuffer,length);
+	timerWaitMs(2500000);
 
 	lightNine();
 	timerWaitMs(2500000);
