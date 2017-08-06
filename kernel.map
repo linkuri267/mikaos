@@ -104,16 +104,16 @@ LOAD ./libcsud.a
 
 .data           0x0000000000008100    0x17d0a
  *(.data)
- .data          0x0000000000008100      0x24c build/main.o
- .data          0x000000000000834c        0x0 build/mailbox.o
- *fill*         0x000000000000834c        0x4 
- .data          0x0000000000008350       0x28 build/framebuffer.o
-                0x0000000000008350                frameBufferInfo
- .data          0x0000000000008378        0x0 build/text.o
- .data          0x0000000000008378        0x0 build/systemTimer.o
- *fill*         0x0000000000008378        0x8 
- .data          0x0000000000008380      0x810 build/drawing.o
- *fill*         0x0000000000008b90       0x70 
+ .data          0x0000000000008100      0x284 build/main.o
+ .data          0x0000000000008384        0x0 build/mailbox.o
+ *fill*         0x0000000000008384        0xc 
+ .data          0x0000000000008390       0x28 build/framebuffer.o
+                0x0000000000008390                frameBufferInfo
+ .data          0x00000000000083b8        0x0 build/text.o
+ .data          0x00000000000083b8        0x0 build/systemTimer.o
+ *fill*         0x00000000000083b8        0x8 
+ .data          0x00000000000083c0      0x810 build/drawing.o
+ *fill*         0x0000000000008bd0       0x30 
  .data          0x0000000000008c00     0xb1a7 build/terminal.o
  .data          0x0000000000013da7        0x0 build/math.o
  .data          0x0000000000013da7        0x0 build/gpio.o
@@ -307,77 +307,77 @@ LOAD ./libcsud.a
  .ARM.attributes
                 0x000000000001fdd8       0x32 ./libcsud.a(platform.broadcom2835.c.o)
 
-.text           0x000000000001fe0c     0x2030
+.text           0x000000000001fe0c     0x2040
  *.c.o(.text)
  *(.text)
- .text          0x000000000001fe0c      0x20c build/main.o
- .text          0x0000000000020018       0x7c build/mailbox.o
-                0x0000000000020018                getMailboxAddress
-                0x0000000000020020                mailboxWrite
-                0x0000000000020054                mailboxRead
- .text          0x0000000000020094       0x5c build/framebuffer.o
-                0x0000000000020094                initializeFrameBuffer
- .text          0x00000000000200f0      0x2d8 build/text.o
-                0x00000000000200f0                number2StringS
-                0x0000000000020138                number2StringU
-                0x00000000000201b8                reverseString
-                0x00000000000201f0                formatString
- .text          0x00000000000203c8       0x40 build/systemTimer.o
-                0x00000000000203c8                getTimerAddress
-                0x00000000000203d0                getCounterValue
-                0x00000000000203e0                timerWaitMs
- .text          0x0000000000020408      0x270 build/drawing.o
-                0x0000000000020408                setForeColor
-                0x000000000002041c                getForeColor
-                0x0000000000020428                setGraphicsAddress
-                0x0000000000020434                setPixel
-                0x0000000000020480                drawLine
-                0x0000000000020500                drawCharacter
-                0x0000000000020568                drawString
-                0x00000000000205e4                drawStringDelay
- .text          0x0000000000020678      0x334 build/terminal.o
-                0x0000000000020678                terminalColor
-                0x00000000000206bc                terminalDisplay
-                0x0000000000020764                terminalClear
-                0x000000000002077c                print
-                0x0000000000020854                readLine
-                0x0000000000020934                changeTextColor
- .text          0x00000000000209ac       0x48 build/math.o
-                0x00000000000209ac                divideU32
- .text          0x00000000000209f4       0x94 build/gpio.o
-                0x00000000000209f4                getGpioAddress
-                0x00000000000209fc                setGpioFunc
-                0x0000000000020a4c                setGpio
- .text          0x0000000000020a88      0x150 build/keyboard.o
-                0x0000000000020a88                keyboardUpdate
-                0x0000000000020b0c                keyWasDown
-                0x0000000000020b48                keyboardGetChar
- .text          0x0000000000020bd8       0x18 build/random.o
-                0x0000000000020bd8                random
- .text          0x0000000000020bf0      0x1ac build/lights.o
-                0x0000000000020bf0                lightNine
-                0x0000000000020c34                lightDot
-                0x0000000000020c54                lightThree
-                0x0000000000020cb0                lightUpMyWorld
- .text          0x0000000000020d9c       0xd4 build/int.o
-                0x0000000000020d9c                stringToInt
- .text          0x0000000000020e70      0xfcc build/connectfour.o
-                0x0000000000020e70                clearBoardArea
-                0x0000000000020ef4                drawBoard
-                0x0000000000020fd4                drawM
-                0x00000000000210c8                drawT
-                0x0000000000021174                drawMark
-                0x00000000000211cc                checkVerticalWin
-                0x0000000000021320                checkHorizontalWin
-                0x0000000000021474                checkDiagonalWin
-                0x0000000000021a90                checkWin
-                0x0000000000021afc                connectFour
+ .text          0x000000000001fe0c      0x21c build/main.o
+ .text          0x0000000000020028       0x7c build/mailbox.o
+                0x0000000000020028                getMailboxAddress
+                0x0000000000020030                mailboxWrite
+                0x0000000000020064                mailboxRead
+ .text          0x00000000000200a4       0x5c build/framebuffer.o
+                0x00000000000200a4                initializeFrameBuffer
+ .text          0x0000000000020100      0x2d8 build/text.o
+                0x0000000000020100                number2StringS
+                0x0000000000020148                number2StringU
+                0x00000000000201c8                reverseString
+                0x0000000000020200                formatString
+ .text          0x00000000000203d8       0x40 build/systemTimer.o
+                0x00000000000203d8                getTimerAddress
+                0x00000000000203e0                getCounterValue
+                0x00000000000203f0                timerWaitMs
+ .text          0x0000000000020418      0x270 build/drawing.o
+                0x0000000000020418                setForeColor
+                0x000000000002042c                getForeColor
+                0x0000000000020438                setGraphicsAddress
+                0x0000000000020444                setPixel
+                0x0000000000020490                drawLine
+                0x0000000000020510                drawCharacter
+                0x0000000000020578                drawString
+                0x00000000000205f4                drawStringDelay
+ .text          0x0000000000020688      0x334 build/terminal.o
+                0x0000000000020688                terminalColor
+                0x00000000000206cc                terminalDisplay
+                0x0000000000020774                terminalClear
+                0x000000000002078c                print
+                0x0000000000020864                readLine
+                0x0000000000020944                changeTextColor
+ .text          0x00000000000209bc       0x48 build/math.o
+                0x00000000000209bc                divideU32
+ .text          0x0000000000020a04       0x94 build/gpio.o
+                0x0000000000020a04                getGpioAddress
+                0x0000000000020a0c                setGpioFunc
+                0x0000000000020a5c                setGpio
+ .text          0x0000000000020a98      0x150 build/keyboard.o
+                0x0000000000020a98                keyboardUpdate
+                0x0000000000020b1c                keyWasDown
+                0x0000000000020b58                keyboardGetChar
+ .text          0x0000000000020be8       0x18 build/random.o
+                0x0000000000020be8                random
+ .text          0x0000000000020c00      0x1ac build/lights.o
+                0x0000000000020c00                lightNine
+                0x0000000000020c44                lightDot
+                0x0000000000020c64                lightThree
+                0x0000000000020cc0                lightUpMyWorld
+ .text          0x0000000000020dac       0xd4 build/int.o
+                0x0000000000020dac                stringToInt
+ .text          0x0000000000020e80      0xfcc build/connectfour.o
+                0x0000000000020e80                clearBoardArea
+                0x0000000000020f04                drawBoard
+                0x0000000000020fe4                drawM
+                0x00000000000210d8                drawT
+                0x0000000000021184                drawMark
+                0x00000000000211dc                checkVerticalWin
+                0x0000000000021330                checkHorizontalWin
+                0x0000000000021484                checkDiagonalWin
+                0x0000000000021aa0                checkWin
+                0x0000000000021b0c                connectFour
 
-.rodata         0x0000000000021e3c       0x8a
+.rodata         0x0000000000021e4c       0x8a
  *(.rodata)
- .rodata        0x0000000000021e3c        0xa build/lights.o
- *fill*         0x0000000000021e46        0x2 
- .rodata        0x0000000000021e48       0x7e build/connectfour.o
+ .rodata        0x0000000000021e4c        0xa build/lights.o
+ *fill*         0x0000000000021e56        0x2 
+ .rodata        0x0000000000021e58       0x7e build/connectfour.o
 
 /DISCARD/
  *(*)
