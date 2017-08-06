@@ -61,6 +61,10 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 build/random.o
  .ARM.attributes
                 0x0000000000000000       0x14 build/random.o
+ .bss           0x0000000000000000        0x0 build/lights.o
+ .comment       0x0000000000000000       0x39 build/lights.o
+ .ARM.attributes
+                0x0000000000000000       0x30 build/lights.o
  .bss           0x0000000000000000        0x0 build/int.o
  .comment       0x0000000000000000       0x39 build/int.o
  .ARM.attributes
@@ -88,6 +92,7 @@ LOAD build/math.o
 LOAD build/gpio.o
 LOAD build/keyboard.o
 LOAD build/random.o
+LOAD build/lights.o
 LOAD build/int.o
 LOAD build/connectfour.o
 LOAD ./libcsud.a
@@ -115,6 +120,7 @@ LOAD ./libcsud.a
  *fill*         0x0000000000013da7        0x1 
  .data          0x0000000000013da8       0xe0 build/keyboard.o
  .data          0x0000000000013e88        0x0 build/random.o
+ .data          0x0000000000013e88        0x0 build/lights.o
  .data          0x0000000000013e88        0x0 build/int.o
  .data          0x0000000000013e88        0x0 build/connectfour.o
  .data          0x0000000000013e88        0x0 ./libcsud.a(device.keyboard.c.o)
@@ -301,7 +307,7 @@ LOAD ./libcsud.a
  .ARM.attributes
                 0x000000000001fdd8       0x32 ./libcsud.a(platform.broadcom2835.c.o)
 
-.text           0x000000000001fe0c     0x1fc4
+.text           0x000000000001fe0c     0x1ffc
  *.c.o(.text)
  *(.text)
  .text          0x000000000001fe0c      0x20c build/main.o
@@ -338,34 +344,38 @@ LOAD ./libcsud.a
                 0x0000000000020934                changeTextColor
  .text          0x00000000000209ac       0x48 build/math.o
                 0x00000000000209ac                divideU32
- .text          0x00000000000209f4      0x1d4 build/gpio.o
+ .text          0x00000000000209f4       0x94 build/gpio.o
                 0x00000000000209f4                getGpioAddress
                 0x00000000000209fc                setGpioFunc
                 0x0000000000020a4c                setGpio
-                0x0000000000020a84                lightUpMyWorld
- .text          0x0000000000020bc8      0x150 build/keyboard.o
-                0x0000000000020bc8                keyboardUpdate
-                0x0000000000020c4c                keyWasDown
-                0x0000000000020c88                keyboardGetChar
- .text          0x0000000000020d18       0x18 build/random.o
-                0x0000000000020d18                random
- .text          0x0000000000020d30       0xd4 build/int.o
-                0x0000000000020d30                stringToInt
- .text          0x0000000000020e04      0xfcc build/connectfour.o
-                0x0000000000020e04                clearBoardArea
-                0x0000000000020e88                drawBoard
-                0x0000000000020f68                drawM
-                0x000000000002105c                drawT
-                0x0000000000021108                drawMark
-                0x0000000000021160                checkVerticalWin
-                0x00000000000212b4                checkHorizontalWin
-                0x0000000000021408                checkDiagonalWin
-                0x0000000000021a24                checkWin
-                0x0000000000021a90                connectFour
+ .text          0x0000000000020a88      0x150 build/keyboard.o
+                0x0000000000020a88                keyboardUpdate
+                0x0000000000020b0c                keyWasDown
+                0x0000000000020b48                keyboardGetChar
+ .text          0x0000000000020bd8       0x18 build/random.o
+                0x0000000000020bd8                random
+ .text          0x0000000000020bf0      0x178 build/lights.o
+                0x0000000000020bf0                lightNine
+                0x0000000000020c34                lightDot
+                0x0000000000020c54                lightThree
+                0x0000000000020cb0                lightUpMyWorld
+ .text          0x0000000000020d68       0xd4 build/int.o
+                0x0000000000020d68                stringToInt
+ .text          0x0000000000020e3c      0xfcc build/connectfour.o
+                0x0000000000020e3c                clearBoardArea
+                0x0000000000020ec0                drawBoard
+                0x0000000000020fa0                drawM
+                0x0000000000021094                drawT
+                0x0000000000021140                drawMark
+                0x0000000000021198                checkVerticalWin
+                0x00000000000212ec                checkHorizontalWin
+                0x0000000000021440                checkDiagonalWin
+                0x0000000000021a5c                checkWin
+                0x0000000000021ac8                connectFour
 
-.rodata         0x0000000000021dd0       0x7e
+.rodata         0x0000000000021e08       0x7e
  *(.rodata)
- .rodata        0x0000000000021dd0       0x7e build/connectfour.o
+ .rodata        0x0000000000021e08       0x7e build/connectfour.o
 
 /DISCARD/
  *(*)
