@@ -20481,54 +20481,54 @@ Disassembly of section .text:
    20cc4:	e8920007 	ldm	r2, {r0, r1, r2}
    20cc8:	e8a30003 	stmia	r3!, {r0, r1}
    20ccc:	e5c32000 	strb	r2, [r3]
-   20cd0:	e3a00009 	mov	r0, #9
-   20cd4:	e3a01001 	mov	r1, #1
-   20cd8:	ebffff47 	bl	209fc <setGpioFunc>
-   20cdc:	e3a00011 	mov	r0, #17
-   20ce0:	e3a01001 	mov	r1, #1
-   20ce4:	ebffff44 	bl	209fc <setGpioFunc>
-   20ce8:	e3a00017 	mov	r0, #23
-   20cec:	e3a01001 	mov	r1, #1
-   20cf0:	ebffff41 	bl	209fc <setGpioFunc>
-   20cf4:	e3a0000b 	mov	r0, #11
-   20cf8:	e3a01001 	mov	r1, #1
-   20cfc:	ebffff3e 	bl	209fc <setGpioFunc>
-   20d00:	e3a0000a 	mov	r0, #10
-   20d04:	e3a01001 	mov	r1, #1
-   20d08:	ebffff3b 	bl	209fc <setGpioFunc>
-   20d0c:	e3a00016 	mov	r0, #22
+   20cd0:	e24b2010 	sub	r2, fp, #16
+   20cd4:	e24b3030 	sub	r3, fp, #48	; 0x30
+   20cd8:	e1a00002 	mov	r0, r2
+   20cdc:	e1a01003 	mov	r1, r3
+   20ce0:	e3a02000 	mov	r2, #0
+   20ce4:	ebfffd41 	bl	201f0 <formatString>
+   20ce8:	e1a03000 	mov	r3, r0
+   20cec:	e54b3005 	strb	r3, [fp, #-5]
+   20cf0:	e55b3005 	ldrb	r3, [fp, #-5]
+   20cf4:	e24b2030 	sub	r2, fp, #48	; 0x30
+   20cf8:	e1a00002 	mov	r0, r2
+   20cfc:	e1a01003 	mov	r1, r3
+   20d00:	ebfffe9d 	bl	2077c <print>
+   20d04:	e59f00b0 	ldr	r0, [pc, #176]	; 20dbc <lightUpMyWorld+0x10c>
+   20d08:	ebfffdb4 	bl	203e0 <timerWaitMs>
+   20d0c:	e3a00009 	mov	r0, #9
    20d10:	e3a01001 	mov	r1, #1
    20d14:	ebffff38 	bl	209fc <setGpioFunc>
-   20d18:	e3a00004 	mov	r0, #4
+   20d18:	e3a00011 	mov	r0, #17
    20d1c:	e3a01001 	mov	r1, #1
    20d20:	ebffff35 	bl	209fc <setGpioFunc>
-   20d24:	e3a00019 	mov	r0, #25
+   20d24:	e3a00017 	mov	r0, #23
    20d28:	e3a01001 	mov	r1, #1
    20d2c:	ebffff32 	bl	209fc <setGpioFunc>
-   20d30:	e3a00008 	mov	r0, #8
+   20d30:	e3a0000b 	mov	r0, #11
    20d34:	e3a01001 	mov	r1, #1
    20d38:	ebffff2f 	bl	209fc <setGpioFunc>
-   20d3c:	e3a00007 	mov	r0, #7
+   20d3c:	e3a0000a 	mov	r0, #10
    20d40:	e3a01001 	mov	r1, #1
    20d44:	ebffff2c 	bl	209fc <setGpioFunc>
-   20d48:	e3a00018 	mov	r0, #24
+   20d48:	e3a00016 	mov	r0, #22
    20d4c:	e3a01001 	mov	r1, #1
    20d50:	ebffff29 	bl	209fc <setGpioFunc>
-   20d54:	e24b2010 	sub	r2, fp, #16
-   20d58:	e24b3030 	sub	r3, fp, #48	; 0x30
-   20d5c:	e1a00002 	mov	r0, r2
-   20d60:	e1a01003 	mov	r1, r3
-   20d64:	e3a02000 	mov	r2, #0
-   20d68:	ebfffd20 	bl	201f0 <formatString>
-   20d6c:	e1a03000 	mov	r3, r0
-   20d70:	e54b3005 	strb	r3, [fp, #-5]
-   20d74:	e55b3005 	ldrb	r3, [fp, #-5]
-   20d78:	e24b2030 	sub	r2, fp, #48	; 0x30
-   20d7c:	e1a00002 	mov	r0, r2
-   20d80:	e1a01003 	mov	r1, r3
-   20d84:	ebfffe7c 	bl	2077c <print>
-   20d88:	e59f002c 	ldr	r0, [pc, #44]	; 20dbc <lightUpMyWorld+0x10c>
-   20d8c:	ebfffd93 	bl	203e0 <timerWaitMs>
+   20d54:	e3a00004 	mov	r0, #4
+   20d58:	e3a01001 	mov	r1, #1
+   20d5c:	ebffff26 	bl	209fc <setGpioFunc>
+   20d60:	e3a00019 	mov	r0, #25
+   20d64:	e3a01001 	mov	r1, #1
+   20d68:	ebffff23 	bl	209fc <setGpioFunc>
+   20d6c:	e3a00008 	mov	r0, #8
+   20d70:	e3a01001 	mov	r1, #1
+   20d74:	ebffff20 	bl	209fc <setGpioFunc>
+   20d78:	e3a00007 	mov	r0, #7
+   20d7c:	e3a01001 	mov	r1, #1
+   20d80:	ebffff1d 	bl	209fc <setGpioFunc>
+   20d84:	e3a00018 	mov	r0, #24
+   20d88:	e3a01001 	mov	r1, #1
+   20d8c:	ebffff1a 	bl	209fc <setGpioFunc>
    20d90:	ebffff96 	bl	20bf0 <lightNine>
    20d94:	e59f0020 	ldr	r0, [pc, #32]	; 20dbc <lightUpMyWorld+0x10c>
    20d98:	ebfffd90 	bl	203e0 <timerWaitMs>
