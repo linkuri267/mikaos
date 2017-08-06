@@ -25,16 +25,16 @@ SECTIONS {
 		*.c.o(*)
 	}
 	
-	.rodata : {
-		*(.rodata)
-	}
-	
 	/* 
 	* Next we put the rest of the code.
 	*/
 	.text : {
 		*.c.o(.text)
 		*(.text)
+	}
+
+	.rodata : {
+		*(.rodata)
 	}
 
 	/*

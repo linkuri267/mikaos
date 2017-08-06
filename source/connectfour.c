@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include "connectFour.h"
+#include "connectfour.h"
 
 //Calls setPixel on board area with black forecolor
 void clearBoardArea()
