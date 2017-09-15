@@ -21474,10 +21474,10 @@ Disassembly of section .text:
    21bc8:	e24bd004 	sub	sp, fp, #4
    21bcc:	e8bd4800 	pop	{fp, lr}
    21bd0:	e12fff1e 	bx	lr
-   21bd4:	000220e0 	.word	0x000220e0
-   21bd8:	00022100 	.word	0x00022100
-   21bdc:	00022124 	.word	0x00022124
-   21be0:	00022140 	.word	0x00022140
+   21bd4:	000223b0 	.word	0x000223b0
+   21bd8:	000223d0 	.word	0x000223d0
+   21bdc:	000223f4 	.word	0x000223f4
+   21be0:	00022410 	.word	0x00022410
    21be4:	0000fabf 	.word	0x0000fabf
    21be8:	002625a0 	.word	0x002625a0
 
@@ -21534,7 +21534,7 @@ Disassembly of section .text:
    21cb0:	e24bd008 	sub	sp, fp, #8
    21cb4:	e8bd4810 	pop	{r4, fp, lr}
    21cb8:	e12fff1e 	bx	lr
-   21cbc:	00022160 	.word	0x00022160
+   21cbc:	00022430 	.word	0x00022430
 
 00021cc0 <printLinkedListReverse>:
    21cc0:	e92d4800 	push	{fp, lr}
@@ -21610,7 +21610,7 @@ Disassembly of section .text:
    21dd8:	e24bd004 	sub	sp, fp, #4
    21ddc:	e8bd4800 	pop	{fp, lr}
    21de0:	e12fff1e 	bx	lr
-   21de4:	00022160 	.word	0x00022160
+   21de4:	00022430 	.word	0x00022430
 
 00021de8 <pushLinkedList>:
    21de8:	e92d4800 	push	{fp, lr}
@@ -21811,5 +21811,189 @@ Disassembly of section .text:
    220cc:	e24bd004 	sub	sp, fp, #4
    220d0:	e8bd4800 	pop	{fp, lr}
    220d4:	e12fff1e 	bx	lr
-   220d8:	00022178 	.word	0x00022178
+   220d8:	00022448 	.word	0x00022448
    220dc:	002625a0 	.word	0x002625a0
+
+000220e0 <merge>:
+   220e0:	e52db004 	push	{fp}		; (str fp, [sp, #-4]!)
+   220e4:	e28db000 	add	fp, sp, #0
+   220e8:	e24dd02c 	sub	sp, sp, #44	; 0x2c
+   220ec:	e50b0020 	str	r0, [fp, #-32]
+   220f0:	e50b1024 	str	r1, [fp, #-36]	; 0x24
+   220f4:	e50b2028 	str	r2, [fp, #-40]	; 0x28
+   220f8:	e50b302c 	str	r3, [fp, #-44]	; 0x2c
+   220fc:	e51b3024 	ldr	r3, [fp, #-36]	; 0x24
+   22100:	e50b3008 	str	r3, [fp, #-8]
+   22104:	e51b302c 	ldr	r3, [fp, #-44]	; 0x2c
+   22108:	e2833001 	add	r3, r3, #1
+   2210c:	e50b300c 	str	r3, [fp, #-12]
+   22110:	e3a03000 	mov	r3, #0
+   22114:	e50b3010 	str	r3, [fp, #-16]
+   22118:	ea000029 	b	221c4 <merge+0xe4>
+   2211c:	e51b300c 	ldr	r3, [fp, #-12]
+   22120:	e1a03103 	lsl	r3, r3, #2
+   22124:	e51b2020 	ldr	r2, [fp, #-32]
+   22128:	e0823003 	add	r3, r2, r3
+   2212c:	e5932000 	ldr	r2, [r3]
+   22130:	e51b3008 	ldr	r3, [fp, #-8]
+   22134:	e1a03103 	lsl	r3, r3, #2
+   22138:	e51b1020 	ldr	r1, [fp, #-32]
+   2213c:	e0813003 	add	r3, r1, r3
+   22140:	e5933000 	ldr	r3, [r3]
+   22144:	e1520003 	cmp	r2, r3
+   22148:	2a00000d 	bcs	22184 <merge+0xa4>
+   2214c:	e51b3010 	ldr	r3, [fp, #-16]
+   22150:	e1a03103 	lsl	r3, r3, #2
+   22154:	e51b2018 	ldr	r2, [fp, #-24]
+   22158:	e0823003 	add	r3, r2, r3
+   2215c:	e51b200c 	ldr	r2, [fp, #-12]
+   22160:	e1a02102 	lsl	r2, r2, #2
+   22164:	e51b1020 	ldr	r1, [fp, #-32]
+   22168:	e0812002 	add	r2, r1, r2
+   2216c:	e5922000 	ldr	r2, [r2]
+   22170:	e5832000 	str	r2, [r3]
+   22174:	e51b300c 	ldr	r3, [fp, #-12]
+   22178:	e2833001 	add	r3, r3, #1
+   2217c:	e50b300c 	str	r3, [fp, #-12]
+   22180:	ea00000c 	b	221b8 <merge+0xd8>
+   22184:	e51b3010 	ldr	r3, [fp, #-16]
+   22188:	e1a03103 	lsl	r3, r3, #2
+   2218c:	e51b2018 	ldr	r2, [fp, #-24]
+   22190:	e0823003 	add	r3, r2, r3
+   22194:	e51b2008 	ldr	r2, [fp, #-8]
+   22198:	e1a02102 	lsl	r2, r2, #2
+   2219c:	e51b1020 	ldr	r1, [fp, #-32]
+   221a0:	e0812002 	add	r2, r1, r2
+   221a4:	e5922000 	ldr	r2, [r2]
+   221a8:	e5832000 	str	r2, [r3]
+   221ac:	e51b3008 	ldr	r3, [fp, #-8]
+   221b0:	e2833001 	add	r3, r3, #1
+   221b4:	e50b3008 	str	r3, [fp, #-8]
+   221b8:	e51b3010 	ldr	r3, [fp, #-16]
+   221bc:	e2833001 	add	r3, r3, #1
+   221c0:	e50b3010 	str	r3, [fp, #-16]
+   221c4:	e51b2008 	ldr	r2, [fp, #-8]
+   221c8:	e51b302c 	ldr	r3, [fp, #-44]	; 0x2c
+   221cc:	e1520003 	cmp	r2, r3
+   221d0:	8a000003 	bhi	221e4 <merge+0x104>
+   221d4:	e51b200c 	ldr	r2, [fp, #-12]
+   221d8:	e51b3028 	ldr	r3, [fp, #-40]	; 0x28
+   221dc:	e1520003 	cmp	r2, r3
+   221e0:	9affffcd 	bls	2211c <merge+0x3c>
+   221e4:	e51b2008 	ldr	r2, [fp, #-8]
+   221e8:	e51b302c 	ldr	r3, [fp, #-44]	; 0x2c
+   221ec:	e1520003 	cmp	r2, r3
+   221f0:	8a000017 	bhi	22254 <merge+0x174>
+   221f4:	e51b3008 	ldr	r3, [fp, #-8]
+   221f8:	e50b3014 	str	r3, [fp, #-20]
+   221fc:	ea00000f 	b	22240 <merge+0x160>
+   22200:	e51b3010 	ldr	r3, [fp, #-16]
+   22204:	e1a03103 	lsl	r3, r3, #2
+   22208:	e51b2018 	ldr	r2, [fp, #-24]
+   2220c:	e0823003 	add	r3, r2, r3
+   22210:	e51b2014 	ldr	r2, [fp, #-20]
+   22214:	e1a02102 	lsl	r2, r2, #2
+   22218:	e51b1020 	ldr	r1, [fp, #-32]
+   2221c:	e0812002 	add	r2, r1, r2
+   22220:	e5922000 	ldr	r2, [r2]
+   22224:	e5832000 	str	r2, [r3]
+   22228:	e51b3010 	ldr	r3, [fp, #-16]
+   2222c:	e2833001 	add	r3, r3, #1
+   22230:	e50b3010 	str	r3, [fp, #-16]
+   22234:	e51b3014 	ldr	r3, [fp, #-20]
+   22238:	e2833001 	add	r3, r3, #1
+   2223c:	e50b3014 	str	r3, [fp, #-20]
+   22240:	e51b2014 	ldr	r2, [fp, #-20]
+   22244:	e51b302c 	ldr	r3, [fp, #-44]	; 0x2c
+   22248:	e1520003 	cmp	r2, r3
+   2224c:	9affffeb 	bls	22200 <merge+0x120>
+   22250:	ea00001a 	b	222c0 <merge+0x1e0>
+   22254:	e51b200c 	ldr	r2, [fp, #-12]
+   22258:	e51b3028 	ldr	r3, [fp, #-40]	; 0x28
+   2225c:	e1520003 	cmp	r2, r3
+   22260:	8a000016 	bhi	222c0 <merge+0x1e0>
+   22264:	e51b300c 	ldr	r3, [fp, #-12]
+   22268:	e50b3014 	str	r3, [fp, #-20]
+   2226c:	ea00000f 	b	222b0 <merge+0x1d0>
+   22270:	e51b3010 	ldr	r3, [fp, #-16]
+   22274:	e1a03103 	lsl	r3, r3, #2
+   22278:	e51b2018 	ldr	r2, [fp, #-24]
+   2227c:	e0823003 	add	r3, r2, r3
+   22280:	e51b2014 	ldr	r2, [fp, #-20]
+   22284:	e1a02102 	lsl	r2, r2, #2
+   22288:	e51b1020 	ldr	r1, [fp, #-32]
+   2228c:	e0812002 	add	r2, r1, r2
+   22290:	e5922000 	ldr	r2, [r2]
+   22294:	e5832000 	str	r2, [r3]
+   22298:	e51b3010 	ldr	r3, [fp, #-16]
+   2229c:	e2833001 	add	r3, r3, #1
+   222a0:	e50b3010 	str	r3, [fp, #-16]
+   222a4:	e51b3014 	ldr	r3, [fp, #-20]
+   222a8:	e2833001 	add	r3, r3, #1
+   222ac:	e50b3014 	str	r3, [fp, #-20]
+   222b0:	e51b2014 	ldr	r2, [fp, #-20]
+   222b4:	e51b3028 	ldr	r3, [fp, #-40]	; 0x28
+   222b8:	e1520003 	cmp	r2, r3
+   222bc:	9affffeb 	bls	22270 <merge+0x190>
+   222c0:	e3a03000 	mov	r3, #0
+   222c4:	e50b3014 	str	r3, [fp, #-20]
+   222c8:	ea00000e 	b	22308 <merge+0x228>
+   222cc:	e51b2014 	ldr	r2, [fp, #-20]
+   222d0:	e51b3024 	ldr	r3, [fp, #-36]	; 0x24
+   222d4:	e0823003 	add	r3, r2, r3
+   222d8:	e1a03103 	lsl	r3, r3, #2
+   222dc:	e51b2020 	ldr	r2, [fp, #-32]
+   222e0:	e0823003 	add	r3, r2, r3
+   222e4:	e51b2014 	ldr	r2, [fp, #-20]
+   222e8:	e1a02102 	lsl	r2, r2, #2
+   222ec:	e51b1018 	ldr	r1, [fp, #-24]
+   222f0:	e0812002 	add	r2, r1, r2
+   222f4:	e5922000 	ldr	r2, [r2]
+   222f8:	e5832000 	str	r2, [r3]
+   222fc:	e51b3014 	ldr	r3, [fp, #-20]
+   22300:	e2833001 	add	r3, r3, #1
+   22304:	e50b3014 	str	r3, [fp, #-20]
+   22308:	e51b2014 	ldr	r2, [fp, #-20]
+   2230c:	e51b3010 	ldr	r3, [fp, #-16]
+   22310:	e1520003 	cmp	r2, r3
+   22314:	3affffec 	bcc	222cc <merge+0x1ec>
+   22318:	e28bd000 	add	sp, fp, #0
+   2231c:	e8bd0800 	ldmfd	sp!, {fp}
+   22320:	e12fff1e 	bx	lr
+
+00022324 <mergesort>:
+   22324:	e92d4800 	push	{fp, lr}
+   22328:	e28db004 	add	fp, sp, #4
+   2232c:	e24dd018 	sub	sp, sp, #24
+   22330:	e50b0010 	str	r0, [fp, #-16]
+   22334:	e50b1014 	str	r1, [fp, #-20]
+   22338:	e50b2018 	str	r2, [fp, #-24]
+   2233c:	e51b2014 	ldr	r2, [fp, #-20]
+   22340:	e51b3018 	ldr	r3, [fp, #-24]
+   22344:	e1520003 	cmp	r2, r3
+   22348:	0a000014 	beq	223a0 <mergesort+0x7c>
+   2234c:	e51b2018 	ldr	r2, [fp, #-24]
+   22350:	e51b3014 	ldr	r3, [fp, #-20]
+   22354:	e0823003 	add	r3, r2, r3
+   22358:	e1a030a3 	lsr	r3, r3, #1
+   2235c:	e50b3008 	str	r3, [fp, #-8]
+   22360:	e51b0010 	ldr	r0, [fp, #-16]
+   22364:	e51b1014 	ldr	r1, [fp, #-20]
+   22368:	e51b2008 	ldr	r2, [fp, #-8]
+   2236c:	ebffffec 	bl	22324 <mergesort>
+   22370:	e51b3008 	ldr	r3, [fp, #-8]
+   22374:	e2833001 	add	r3, r3, #1
+   22378:	e51b0010 	ldr	r0, [fp, #-16]
+   2237c:	e1a01003 	mov	r1, r3
+   22380:	e51b2018 	ldr	r2, [fp, #-24]
+   22384:	ebffffe6 	bl	22324 <mergesort>
+   22388:	e51b0010 	ldr	r0, [fp, #-16]
+   2238c:	e51b1014 	ldr	r1, [fp, #-20]
+   22390:	e51b2018 	ldr	r2, [fp, #-24]
+   22394:	e51b3008 	ldr	r3, [fp, #-8]
+   22398:	ebffff50 	bl	220e0 <merge>
+   2239c:	ea000000 	b	223a4 <mergesort+0x80>
+   223a0:	e1a00000 	nop			; (mov r0, r0)
+   223a4:	e24bd004 	sub	sp, fp, #4
+   223a8:	e8bd4800 	pop	{fp, lr}
+   223ac:	e12fff1e 	bx	lr

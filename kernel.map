@@ -69,6 +69,10 @@ Discarded input sections
  .comment       0x00000000       0x12 build/datastructures.o
  .ARM.attributes
                 0x00000000       0x30 build/datastructures.o
+ .bss           0x00000000        0x0 build/dynamic.o
+ .comment       0x00000000       0x12 build/dynamic.o
+ .ARM.attributes
+                0x00000000       0x30 build/dynamic.o
  .bss           0x00000000        0x0 build/int.o
  .comment       0x00000000       0x39 build/int.o
  .ARM.attributes
@@ -77,6 +81,10 @@ Discarded input sections
  .comment       0x00000000       0x39 build/lights.o
  .ARM.attributes
                 0x00000000       0x30 build/lights.o
+ .bss           0x00000000        0x0 build/mergesort.o
+ .comment       0x00000000       0x12 build/mergesort.o
+ .ARM.attributes
+                0x00000000       0x30 build/mergesort.o
 
 Memory Configuration
 
@@ -98,8 +106,10 @@ LOAD build/terminal.o
 LOAD build/text.o
 LOAD build/connectfour.o
 LOAD build/datastructures.o
+LOAD build/dynamic.o
 LOAD build/int.o
 LOAD build/lights.o
+LOAD build/mergesort.o
 LOAD .\libcsud.a
 
 .init           0x00008000        0x4
@@ -124,8 +134,10 @@ LOAD .\libcsud.a
  .data          0x00013ea7        0x0 build/text.o
  .data          0x00013ea7        0x0 build/connectfour.o
  .data          0x00013ea7        0x0 build/datastructures.o
+ .data          0x00013ea7        0x0 build/dynamic.o
  .data          0x00013ea7        0x0 build/int.o
  .data          0x00013ea7        0x0 build/lights.o
+ .data          0x00013ea7        0x0 build/mergesort.o
  .data          0x00013ea7        0x0 .\libcsud.a(device.keyboard.c.o)
  *fill*         0x00013ea7        0x1 
  .data          0x00013ea8        0x4 .\libcsud.a(platform.c.o)
@@ -311,7 +323,7 @@ LOAD .\libcsud.a
  .ARM.attributes
                 0x0001fdf8       0x32 .\libcsud.a(platform.broadcom2835.c.o)
 
-.text           0x0001fe2c     0x22b4
+.text           0x0001fe2c     0x2584
  *.c.o(.text)
  *(.text)
  .text          0x0001fe2c      0x270 build/drawing.o
@@ -373,6 +385,7 @@ LOAD .\libcsud.a
                 0x00021bec                printLinkedList
                 0x00021cc0                printLinkedListReverse
                 0x00021de8                pushLinkedList
+ .text          0x00021e60        0x0 build/dynamic.o
  .text          0x00021e60       0xd4 build/int.o
                 0x00021e60                stringToInt
  .text          0x00021f34      0x1ac build/lights.o
@@ -380,13 +393,16 @@ LOAD .\libcsud.a
                 0x00021f78                lightDot
                 0x00021f98                lightThree
                 0x00021ff4                lightUpMyWorld
+ .text          0x000220e0      0x2d0 build/mergesort.o
+                0x000220e0                merge
+                0x00022324                mergesort
 
-.rodata         0x000220e0       0xa2
+.rodata         0x000223b0       0xa2
  *(.rodata)
- .rodata        0x000220e0       0x7e build/connectfour.o
- *fill*         0x0002215e        0x2 
- .rodata        0x00022160       0x18 build/datastructures.o
- .rodata        0x00022178        0xa build/lights.o
+ .rodata        0x000223b0       0x7e build/connectfour.o
+ *fill*         0x0002242e        0x2 
+ .rodata        0x00022430       0x18 build/datastructures.o
+ .rodata        0x00022448        0xa build/lights.o
 
 /DISCARD/
  *(*)

@@ -1,19 +1,8 @@
 #include <stdint.h>
+#include <datastructures.h>
 
 #define NULL 0
 
-//Type definition of singly linked list
-typedef struct{
-	uint32_t val;
-	struct linkedListNode* next;
-}linkedListNode;
-
-//Type definition of doubly linked list
-typedef struct doubleLinkedListNode{
-	uint32_t val;
-	struct linkedListNode* previous;
-	struct linkedListNode* next;
-}doubleLinkedListNode;
 
 //Prints a singly linked list 
 //Must pass in 0 for second argument with format specified in variable printMessage
