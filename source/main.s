@@ -157,12 +157,6 @@ main:
 			b setGpio
 
 
-	hug:
-		ldr r0,=hugPrompt
-		mov r1,#hugPromptEnd - hugPrompt
-		b print
-
-
 
 	drawRandom:
 	/*Draw random lines with random color */
@@ -238,9 +232,7 @@ main:
 	commandStringOk: .ascii "ok"
 	commandStringCls: .ascii "cls"
 	commandStringChangeTextColor: .ascii "changeTextColor"
-	commandStringLight: .ascii "lightUpMyWorld"
 	commandStringConnectFour: .ascii "connectFour"
-	commandStringHug: .ascii "hug"
 	commandStringDrawRandom: .ascii "drawRandom"
 	commandStringEnd:
 
@@ -251,15 +243,9 @@ main:
 	.int commandStringOk, ok
 	.int commandStringCls, terminalClear
 	.int commandStringChangeTextColor, changeTextColor
-	.int commandStringLight, lightUpMyWorld
 	.int commandStringConnectFour, connectFour
-	.int commandStringHug, hug
 	.int commandStringDrawRandom, drawRandom
 	.int commandStringEnd, 0
-
-	.align 2
-	hugPrompt: .ascii "Stand up and close your eyes for 10 seconds\n"
-	hugPromptEnd:
 
 
 
