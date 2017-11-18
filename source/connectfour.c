@@ -357,17 +357,24 @@ char checkWin(char board[MAX_ROW+1][MAX_COLUMN+1])
 //6x6 board
 void connectFour()
 {
+	//buffer for user input 
 	char inputBuffer[4];
 	char welcomeMessage[]="Welcome to Connect Four v9.3\n";
 	char choicePrompt[]="Player %d please choose column 0-5:";
 	char winMessage1[]="Player 1 (Mika) has won!";
 	char winMessage2[]="Player 2 (Takahashi) has won!";
+	//buffer for game messages
 	char messageBuffer[40];
+	//current player
 	unsigned char player = 1;
+	//length of messages (for print)
 	char length;
 	char board[6][6] = {{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0}};
+	//column user has chosen
 	uint32_t column;
+	//the number of pieces in column (computed each time user puts a piece)
 	char count;
+	//indicator 
 	char playerHasWon = 0;
 	
 	terminalClear();
